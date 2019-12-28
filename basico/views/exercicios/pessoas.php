@@ -1,7 +1,17 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: hunk
- * Date: 28/12/19
- * Time: 15:40
- */
+use \yii\widgets\LinkPager;
+?>
+
+<h1> Pessoas</h1>
+<hr>
+
+<ul>
+    <?php foreach($pessoas as $pessoa): ?>
+        <li>
+            <?= $pessoa->nome . ' ' . $pessoa->email ?> <br />
+            <small> <?= $pessoa->cidade . ' (' . $pessoa->estado . ')' ?> </small>
+        </li>
+    <?php endforeach ?>
+</ul>
+
+<?= LinkPager::widget(['pagination' => $pagination]);

@@ -10,8 +10,10 @@ namespace app\controllers;
 
 
 use app\models\CadastroModel;
+use app\models\Pessoas;
 use yii\base\Controller;
 use Yii;
+use yii\data\Pagination;
 
 class ExerciciosController extends Controller
 {
@@ -30,6 +32,38 @@ class ExerciciosController extends Controller
             ]);
         }
 
+
+    }
+
+//    public function actionPessoas(){
+//
+//        $pessoas = Pessoas::find()->orderBy('nome')->all();
+//        echo '<pre>';print_r($pessoas);
+//
+//        $pessoa = Pessoas::findOne(1);
+//        $pessoa->nome = 'Ueslei José Ferreira da Silva';
+//        $pessoa->save();
+//        echo $pessoa->nome . ' - ' . $pessoa->email;
+//    }
+
+    public function actionPessoas()
+    {
+        $query = Pessoas::find();
+
+        $pagination = new Pagination([
+            'defaultPageSize' => 3,
+            'totalCount' => $query->count()
+        ]);
+
+        $pessoas = $query->orderBy('nome')
+            ->offset($pagination->offset)
+            ->limit($pagination->limit)
+            ->all();
+
+        return $this->render('pessoas', [
+            'pessoas' => $pessoas,
+            'pagination' => $pagination
+        ]);
 
     }
 }

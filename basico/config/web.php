@@ -6,11 +6,21 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
+    'version' => '1.0',
     'bootstrap' => ['log'],
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'language' => 'en',
+    'sourceLanguage' => 'pt-BR',
+    'timeZone' => 'America/Goiania',
+    'charset' => 'UTF-8',
+//    'catchAll' => [
+//        'pessoas/index',
+//        'param1' => 'ueslei',
+//        'param2' => 'silva'
+//    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation

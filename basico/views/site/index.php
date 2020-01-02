@@ -2,9 +2,25 @@
 
 /* @var $this yii\web\View */
 
+
+use app\classes\widgets\HelloWidget;
+use app\classes\widgets\HelloWordBeginEnd;
+
 $this->title = 'My Yii Application';
 ?>
 <div class="site-index">
+
+    <div>
+        <?= HelloWidget::widget([
+            'message' => 'Olá!!!',
+            'submessage' => 'Tudo bem!!!!'
+        ]) ?>
+
+        <?php HelloWordBeginEnd::begin(['enconde' => false]) ?>
+            <h2>Testando as widgets</h2>
+            <h3>Vamos ver como vai sair!</h3>
+        <?php HelloWordBeginEnd::end() ?>
+    </div>
 
     <div class="jumbotron">
         <h1>Congratulations!</h1>

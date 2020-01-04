@@ -4,7 +4,9 @@
 namespace app\modules\financeiro;
 
 
-class FinanceiroModule
+use yii\base\Module;
+
+class FinanceiroModule extends Module
 {
 
 }

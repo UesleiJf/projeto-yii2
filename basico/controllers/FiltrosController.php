@@ -12,10 +12,10 @@ class FiltrosController extends Controller
     {
         return [
             'tempoacao' => [
-                'class' => TempoAcaoFilter::className()
+                'class' => TempoAcaoFilter::class
             ],
             'access' => [
-                'class' => AccessControl::className(),
+                'class' => AccessControl::class,
                 'only' => ['create', 'update'],
                 'rules' => [
                     ['allow' => false]

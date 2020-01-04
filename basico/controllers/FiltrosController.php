@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\classes\filters\TempoAcaoFilter;
 use yii\base\Controller;
 use yii\filters\AccessControl;
 
@@ -10,6 +11,9 @@ class FiltrosController extends Controller
     public function behaviors()
     {
         return [
+            'tempoacao' => [
+                'class' => TempoAcaoFilter::className()
+            ],
             'access' => [
                 'class' => AccessControl::className(),
                 'only' => ['create', 'update'],

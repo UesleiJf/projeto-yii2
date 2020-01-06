@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\classes\components\MyFormatter;
 use yii\web\Controller;
 use Yii;
 
@@ -11,11 +12,17 @@ class FormatterController extends Controller
     public function actionIndex()
     {
         $appLang = Yii::$app->language;
+
+        /** @var MyFormatter $formater */
         $formater = Yii::$app->formatter;
 
         echo "<h2>{$appLang}</h2>";
 
         echo "
+
+            <p>CEP: {$formater->asCep(74333230)}</p>
+
+            <p>Size(Tamanho): {$formater->asShortSize(12345, 2)}</p>
             <p>Percentuais: {$formater->asPercent(0.12345)}</p>
             <p>Percentuais + decimais: {$formater->asPercent(0.12345, 2)}</p>
             <p>Booleano: {$formater->asBoolean(true)}</p>

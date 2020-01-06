@@ -63,7 +63,10 @@ $config = [
     'modules' => [
         'financeiro' => [
             'class' => 'app\modules\financeiro\FinanceiroModule'
-        ]
+        ],
+        'api' => [
+            'class' => 'app\modules\api\ApiModule',
+        ],
     ],
     'params' => $params,
 ];

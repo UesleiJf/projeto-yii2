@@ -130,7 +130,6 @@ class SiteController extends Controller
 
     public function actionFeed()
     {
-
         $api = new RestClient([
             'base_url' => 'http://localhost:9999/api',
             'headers' => [
@@ -145,7 +144,6 @@ class SiteController extends Controller
             'status' => 1
         ]);
 
-
         $api->put('default/6', [
             'titulo' => 'DELETOU O 7??',
         ]);
@@ -158,6 +156,29 @@ class SiteController extends Controller
         $data = Json::decode($result->response);
 
         return $this->render('feed', [
+            'data' => $data
+        ]);
+    }
+
+    public function actionAgenda()
+    {
+        $api = new RestClient([
+            'base_url' => 'http://localhost:9999/agenda',
+            'headers' => [
+                'Accept' => 'application/json'
+            ]
+        ]);
+
+        $api->post('default/create', [
+            'local' => 'Barbasco',
+            'valor' => '600',
+            'observacao' => 'Testando essa fita!!!!',
+        ]);
+
+        $result = $api->get('/default');
+        $data = Json::decode($result->response);
+
+        return $this->render('agenda', [
             'data' => $data
         ]);
     }

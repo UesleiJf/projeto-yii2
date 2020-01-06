@@ -14,7 +14,7 @@ $config = [
     ],
     'language' => 'en',
     'sourceLanguage' => 'pt-BR',
-    'timeZone' => 'America/Goiania',
+    'timeZone' => 'America/Sao_Paulo',
     'charset' => 'UTF-8',
 //    'catchAll' => [
 //        'pessoas/index',
@@ -71,6 +71,9 @@ $config = [
         ],
         'api' => [
             'class' => 'app\modules\api\ApiModule',
+        ],
+        'agenda' => [
+            'class' => 'app\modules\agenda\AgendaModule',
         ],
     ],
     'params' => $params,

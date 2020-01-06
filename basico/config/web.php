@@ -12,7 +12,7 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
-    'language' => 'en',
+    'language' => 'pt_BR',
     'sourceLanguage' => 'pt-BR',
     'timeZone' => 'America/Sao_Paulo',
     'charset' => 'UTF-8',

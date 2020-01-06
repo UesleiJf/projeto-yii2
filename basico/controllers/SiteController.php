@@ -2,8 +2,10 @@
 
 namespace app\controllers;
 
+use RestClient;
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\Json;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
@@ -128,6 +130,19 @@ class SiteController extends Controller
 
     public function actionFeed()
     {
-        return $this->render('feed');
+
+        $api = new RestClient([
+            'base_url' => 'http://localhost:9999/api',
+            'headers' => [
+                'Accept' => 'application/json'
+            ]
+        ]);
+
+        $result = $api->get('/default');
+        $data = Json::decode($result->response);
+
+        return $this->render('feed', [
+            'data' => $data
+        ]);
     }
 }

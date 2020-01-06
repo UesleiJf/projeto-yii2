@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use Yii;
 use app\models\Noticias;
-use app\models\NotiviasSearch;
+use app\models\NoticiasSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -35,7 +35,7 @@ class NoticiasController extends Controller
      */
     public function actionIndex()
     {
-        $searchModel = new NotiviasSearch();
+        $searchModel = new NoticiasSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [

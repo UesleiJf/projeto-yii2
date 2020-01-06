@@ -29,11 +29,9 @@ class Noticias extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['id'], 'required'],
-            [['id', 'status'], 'integer'],
             [['cabeca', 'corpo'], 'string'],
+            [['status'], 'integer'],
             [['titulo'], 'string', 'max' => 255],
-            [['id'], 'unique'],
         ];
     }
 

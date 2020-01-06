@@ -138,6 +138,22 @@ class SiteController extends Controller
             ]
         ]);
 
+        $api->post('default/create', [
+            'titulo' => 'Criando notícia pela Aplicação',
+            'cabeca' => 'Titulo da Noticia pela Aplicação',
+            'corpo' => 'Corpo da Noticia pela Aplicação',
+            'status' => 1
+        ]);
+
+
+        $api->put('default/6', [
+            'titulo' => 'DELETOU O 7??',
+        ]);
+
+        $api->delete('default/7', [
+            'titulo' => 'ALTERANDO notícia pela Aplicação',
+        ]);
+
         $result = $api->get('/default');
         $data = Json::decode($result->response);
 

@@ -48,4 +48,15 @@ class Noticias extends \yii\db\ActiveRecord
             'status' => 'Status',
         ];
     }
+
+    public function fields()
+    {
+        return [
+            'id',
+            'title' => 'titulo',
+            'status' => function(Noticias $model){
+                return ($model->status == '1' ? 'Ativo': 'Inativo');
+            }
+        ];
+    }
 }

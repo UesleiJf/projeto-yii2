@@ -7,36 +7,28 @@ use yii\db\Migration;
  */
 class m200107_140152_create_produtos extends Migration
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function safeUp()
-    {
-
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function safeDown()
-    {
-        echo "m200107_140152_create_produtos cannot be reverted.\n";
-
-        return false;
-    }
-
-    /*
-    // Use up()/down() to run migration code without a transaction.
     public function up()
     {
+        $this->createTable('produtos', [
+            'id' => $this->primaryKey(),
+            'categoria_id' => $this->integer()->notNull(),
+            'nome' => $this->string(60)->notNull(),
+            'valor' => $this->decimal(10,2)->notNull(),
+        ]);
 
+        $this->addForeignKey('fk_produtos_categoria_id', 'produtos', 'categoria_id', 'categorias', 'id');
+
+        $this->insert('produtos', [
+            'categoria_id' => 1,
+            'nome' => 'Resident Evil 3 Remake',
+            'valor' => 249
+        ]);
     }
+
 
     public function down()
     {
-        echo "m200107_140152_create_produtos cannot be reverted.\n";
-
-        return false;
+        $this->dropForeignKey('fk_produtos_categoria_id', 'produtos');
+        $this->dropTable('produtos');
     }
-    */
 }

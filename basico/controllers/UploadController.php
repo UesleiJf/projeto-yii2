@@ -9,7 +9,23 @@
 namespace app\controllers;
 
 
-class UploadController
+use app\models\Clientes;
+use yii\base\Controller;
+
+class UploadController extends Controller
 {
 
+    public function actionIndex()
+    {
+        $post = \Yii::$app->getRequest()->post();
+        $model = new Clientes;
+
+        if ($model->load($post) && $model->validate()){
+
+        }
+
+        return $this->render('index', [
+            'model' => $model
+        ]);
+    }
 }

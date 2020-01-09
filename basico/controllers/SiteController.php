@@ -182,4 +182,9 @@ class SiteController extends Controller
             'data' => $data
         ]);
     }
+
+    public function actionCadastro()
+    {
+        return $this->render('cadastro');
+    }
 }

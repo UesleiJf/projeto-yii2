@@ -19,7 +19,7 @@ class UploadController extends Controller
 
     public function actionIndex()
     {
-        $post = \Yii::$app->getRequest()->post();
+        $post = Yii::$app->getRequest()->post();
         $model = new Clientes;
 
         if ($model->load($post) && $model->validate()){

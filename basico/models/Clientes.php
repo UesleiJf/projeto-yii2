@@ -13,6 +13,11 @@ use Yii;
 class Clientes extends \yii\db\ActiveRecord
 {
     /**
+     * @var UploadFile
+     */
+    public $fotoCliente;
+
+    /**
      * {@inheritdoc}
      */
     public static function tableName()
@@ -26,7 +31,8 @@ class Clientes extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['nome'], 'string', 'max' => 255],
+            [['nome', 'foto'], 'string', 'max' => 255],
+            ['fotoCliente', 'file', 'extensions' => 'jpg, jpeg, png']
         ];
     }
 
@@ -38,6 +44,8 @@ class Clientes extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nome' => 'Nome',
+            'foto' => 'Foto do Cliente',
+            'fotoCliente' => 'Foto do Cliente'
         ];
     }
 }

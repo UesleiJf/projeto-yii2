@@ -18,7 +18,7 @@ class CadastroForm extends Model
     {
         return [
             ['nome', 'required']
-        ]
+        ];
     }
 
     public function attributeLabels()

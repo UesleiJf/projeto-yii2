@@ -79,6 +79,9 @@ $config = [
         'agenda' => [
             'class' => 'app\modules\agenda\AgendaModule',
         ],
+        'evento' => [
+            'class' => 'app\modules\agenda\EventoModule',
+        ],
     ],
     'params' => $params,
 ];

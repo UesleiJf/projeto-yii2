@@ -10,9 +10,12 @@ In this project, concepts and applications such as:
 - Views
 - Filters
 - Routes
-- API Rest
+- API Rest Full
 - Independent Layouts for each Module
 - Widgets
+- Migrations
+- Validators.
 
+At the end of the project, a Docker container will be created for API availability.
 
 Created by Ueslei J. F. da Silva

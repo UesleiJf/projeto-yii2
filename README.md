@@ -1,6 +1,5 @@
 ### Information
 
-
 - This project aims to learn about the Yii2 framework. All the examples developed here are for learning.
 
 In this project, concepts and applications such as:

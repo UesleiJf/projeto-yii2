@@ -187,4 +187,11 @@ class SiteController extends Controller
     {
         return $this->render('cadastro');
     }
+
+    public function actionShop()
+    {
+        $this->layout = 'shop';
+
+        return $this->render('shop');
+    }
 }

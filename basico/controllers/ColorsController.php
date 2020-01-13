@@ -9,7 +9,9 @@
 namespace app\controllers;
 
 
+use app\models\Sizes;
 use yii\base\Controller;
+use yii\data\ActiveDataProvider;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 
@@ -20,17 +22,19 @@ class ColorsController extends Controller
     {
         return [
             'access' => [
-                'class' => AccessControl::class,
+                'class' => AccessControl::className(),
                 'only' => ['logout'],
                 'rules' => [
-                    'actions' => ['logout'],
-                    'allow' => true,
-                    'roles' => ['@'],
-                ]
+                    [
+                        'actions' => ['logout'],
+                        'allow' => true,
+                        'roles' => ['@'],
+                    ],
+                ],
 
             ],
             'verbs' => [
-                'class' => VerbFilter::class,
+                'class' => VerbFilter::className(),
                 'actions' => [
                     'logout' => ['post'],
                 ],
@@ -49,6 +53,21 @@ class ColorsController extends Controller
 
     public function actionIndex()
     {
-        return $this->render('index', []);
+        $query = Sizes::find()
+            ->where(['status' => 1]);
+
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+            'pagination' => [
+                'pageSize' => 3
+            ],
+            'sort' => [
+                'defaultOrder' => ['name' => SORT_ASC]
+            ]
+        ]);
+
+        return $this->render('index', [
+            'dataProvider' => $dataProvider
+        ]);
     }
 }

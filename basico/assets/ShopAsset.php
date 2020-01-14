@@ -11,11 +11,12 @@ class ShopAsset extends AssetBundle
     public $baseUrl = '@web';
 
     public $css = [
+        'css/bootstrap.min.css',
         'css/shop-homepage.css'
     ];
 
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset'
+
     ];
 }

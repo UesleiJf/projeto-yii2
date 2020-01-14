@@ -6,7 +6,6 @@ use RestClient;
 use Yii;
 use yii\filters\AccessControl;
 use yii\helpers\Json;
-use yii\helpers\StringHelper;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
@@ -127,38 +126,6 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
-    }
-
-    public function actionFeed()
-    {
-        $api = new RestClient([
-            'base_url' => 'http://localhost:9999/api',
-            'headers' => [
-                'Accept' => 'application/json'
-            ]
-        ]);
-
-        $api->post('default/create', [
-            'titulo' => 'Criando notícia pela Aplicação',
-            'cabeca' => 'Titulo da Noticia pela Aplicação',
-            'corpo' => 'Corpo da Noticia pela Aplicação',
-            'status' => 1
-        ]);
-
-        $api->put('default/6', [
-            'titulo' => 'DELETOU O 7??',
-        ]);
-
-        $api->delete('default/7', [
-            'titulo' => 'ALTERANDO notícia pela Aplicação',
-        ]);
-
-        $result = $api->get('/default');
-        $data = Json::decode($result->response);
-
-        return $this->render('feed', [
-            'data' => $data
-        ]);
     }
 
     public function actionAgenda()

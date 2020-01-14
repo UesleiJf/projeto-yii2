@@ -8,12 +8,9 @@
 
 namespace app\controllers;
 
-
 use app\models\Noticias;
-use app\models\Sizes;
 use RestClient;
 use yii\base\Controller;
-use yii\base\Exception;
 use yii\data\ActiveDataProvider;
 use yii\helpers\Json;
 

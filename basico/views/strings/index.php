@@ -1,5 +1,4 @@
 <?php
-use yii\grid\GridView;
 use yii\helpers\StringHelper;
 
 $this->title = 'Colors';

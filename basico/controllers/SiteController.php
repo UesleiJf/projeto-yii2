@@ -6,6 +6,7 @@ use RestClient;
 use Yii;
 use yii\filters\AccessControl;
 use yii\helpers\Json;
+use yii\helpers\StringHelper;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;

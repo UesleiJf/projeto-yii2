@@ -11,6 +11,8 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        '@galeriaPath' => '/web/uploads/galerias',
+        '@galeriaUrl' => 'http://localhost:8888/uploads/galerias',
     ],
     'language' => 'pt_BR',
     'sourceLanguage' => 'pt-BR',

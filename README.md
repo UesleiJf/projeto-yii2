@@ -17,4 +17,6 @@ In this project, concepts and applications such as:
 
 At the end of the project, a Docker container will be created for API availability.
 
+It is not defined for which purpose or segment this project can be used in the future.
+
 Created by Ueslei J. F. da Silva

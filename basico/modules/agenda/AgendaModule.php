@@ -1,11 +1,12 @@
 <?php
 
 namespace app\modules\agenda;
+use yii\base\Module;
 
 /**
  * agenda module definition class
  */
-class AgendaModule extends \yii\base\Module
+class AgendaModule extends Module
 {
     /**
      * {@inheritdoc}

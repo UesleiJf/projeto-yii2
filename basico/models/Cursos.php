@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "Cursos".
@@ -12,7 +13,7 @@ use Yii;
  * @property string|null $area
  * @property int|null $turno
  */
-class Cursos extends \yii\db\ActiveRecord
+class Cursos extends ActiveRecord
 {
     /**
      * {@inheritdoc}

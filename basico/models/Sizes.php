@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "{{%sizes}}".
@@ -14,7 +15,7 @@ use Yii;
  * @property string|null $created_at
  * @property string|null $updated_at
  */
-class Sizes extends \yii\db\ActiveRecord
+class Sizes extends ActiveRecord
 {
     /**
      * {@inheritdoc}

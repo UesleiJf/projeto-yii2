@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "Agendas".
@@ -14,7 +15,7 @@ use Yii;
  * @property string|null $valor
  * @property string|null $observacao
  */
-class Agendas extends \yii\db\ActiveRecord
+class Agendas extends ActiveRecord
 {
     /**
      * {@inheritdoc}

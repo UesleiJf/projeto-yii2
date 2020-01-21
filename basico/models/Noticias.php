@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "Noticias".
@@ -13,7 +14,7 @@ use Yii;
  * @property string|null $corpo
  * @property int|null $status
  */
-class Noticias extends \yii\db\ActiveRecord
+class Noticias extends ActiveRecord
 {
     /**
      * {@inheritdoc}

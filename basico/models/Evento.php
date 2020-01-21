@@ -1,6 +1,7 @@
 <?php
 
 namespace app\models;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "Evento".
@@ -9,7 +10,7 @@ namespace app\models;
  * @property string|null $nome
  * @property string|null $data
  */
-class Evento extends \yii\db\ActiveRecord
+class Evento extends ActiveRecord
 {
     /**
      * {@inheritdoc}

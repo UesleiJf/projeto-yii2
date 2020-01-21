@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "Estado".
@@ -11,7 +12,7 @@ use Yii;
  * @property string|null $Nome
  * @property string|null $sigla
  */
-class Estados extends \yii\db\ActiveRecord
+class Estados extends ActiveRecord
 {
     /**
      * {@inheritdoc}

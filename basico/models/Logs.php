@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "{{%Logs}}".
@@ -13,7 +14,7 @@ use Yii;
  * @property string|null $user
  * @property string|null $table
  */
-class Logs extends \yii\db\ActiveRecord
+class Logs extends ActiveRecord
 {
     /**
      * {@inheritdoc}

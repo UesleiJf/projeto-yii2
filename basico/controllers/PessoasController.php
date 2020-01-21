@@ -33,21 +33,21 @@ class PessoasController extends Controller
      * Lists all Pessoas models.
      * @return mixed
      */
-    public function actionIndex()
-    {
-
-        $searchModel = new PessoasSearch();
-        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
-
-        return $this->render('index', [
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-        ]);
-    }
-
 //    public function actionIndex()
 //    {
 //
+//        $searchModel = new PessoasSearch();
+//        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+//
+//        return $this->render('index', [
+//            'searchModel' => $searchModel,
+//            'dataProvider' => $dataProvider,
+//        ]);
+//    }
+
+//    public function actionIndex()
+//    {
+//         //Pessoa Fisica
 //        /** @var Pessoas[] $pessoas */
 //        $pessoas = Pessoas::find()->all();
 //
@@ -61,6 +61,27 @@ class PessoasController extends Controller
 //
 //        exit;
 //    }
+
+    /**
+     * Lists all Pessoas models.
+     * @return mixed
+     */
+    public function actionIndex()
+    {
+         //Pessoa Jurídica
+        /** @var Pessoas[] $pessoas */
+        $pessoas = Pessoas::find()->all();
+
+        foreach ($pessoas as $pessoa) {
+            echo "<h2>
+                Nome: {$pessoa->nome} |
+                CNPJ: {$pessoa->pessoaJuridica->cnpj} |
+                CNPJ: {$pessoa->pessoaJuridica->ie}
+            </h2>";
+        }
+
+        exit;
+    }
 
     /**
      * Displays a single Pessoas model.

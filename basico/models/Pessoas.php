@@ -13,6 +13,7 @@ use yii\db\ActiveRecord;
  * @property string $cidade
  * @property string $estado
  * @property PessoaFisica $pessoaFisica
+ * @property PessoaJuridica $pessoaJuridica
  */
 class Pessoas extends ActiveRecord
 {
@@ -52,5 +53,10 @@ class Pessoas extends ActiveRecord
     public function getPessoaFisica()
     {
         return $this->hasOne(PessoaFisica::class, ['pessoa_id' => 'id']);
+    }
+
+    public function getPessoaJuridica()
+    {
+        return $this->hasOne(PessoaJuridica::class, ['pessoa_id' => 'id']);
     }
 }

@@ -2,18 +2,19 @@
 
 namespace app\models;
 
-use Yii;
+use yii\db\ActiveRecord;
 
 /**
  * This is the model class for table "pessoas".
  *
  * @property int $id
- * @property string|null $nome
- * @property string|null $email
- * @property string|null $cidade
- * @property string|null $estado
+ * @property string $nome
+ * @property string $email
+ * @property string $cidade
+ * @property string $estado
+ * @property PessoaFisica $pessoaFisica
  */
-class Pessoas extends \yii\db\ActiveRecord
+class Pessoas extends ActiveRecord
 {
     /**
      * {@inheritdoc}
@@ -46,5 +47,10 @@ class Pessoas extends \yii\db\ActiveRecord
             'cidade' => 'Cidade',
             'estado' => 'Estado',
         ];
+    }
+
+    public function getPessoaFisica()
+    {
+        return $this->hasOne(PessoaFisica::class, ['pessoa_id' => 'id']);
     }
 }

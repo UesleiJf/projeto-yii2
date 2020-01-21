@@ -35,6 +35,20 @@ class PessoasController extends Controller
      */
     public function actionIndex()
     {
+
+        /** @var Pessoas[] $pessoas */
+        $pessoas = Pessoas::find()->all();
+
+        foreach ($pessoas as $pessoa){
+            echo "<h2>
+                Nome: {$pessoa->nome} |
+                CPF: {$pessoa->pessoaFisica->cpf} |
+                Sexo: {$pessoa->pessoaFisica->sexo}
+            </h2>";
+        }
+
+        exit;
+
         $searchModel = new PessoasSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 

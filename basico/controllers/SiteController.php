@@ -63,12 +63,20 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
+        return $this->render('index');
+    }
+
+//    /**
+//     * Displays homepage.
+//     *
+//     * @return string
+//     */
+//    public function actionIndex()
+//    {
 //        echo '<h3> Galeria Path ' . Yii::getAlias('@galeriaPath') . '</h3>';
 //        echo '<h3> Galeria URL ' . Yii::getAlias('@galeriaUrl') . '</h3>';
 //        exit;
-
-        return $this->render('index');
-    }
+//    }
 
     /**
      * Login action.

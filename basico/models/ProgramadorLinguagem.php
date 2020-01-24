@@ -21,14 +21,4 @@ class ProgramadorLinguagem extends ActiveRecord
             [['programador_id', 'linguagem_id'], 'unique'],
         ];
     }
-
-    public function getProgramador()
-    {
-
-    }
-
-    public function getLinguagem()
-    {
-        
-    }
 }

@@ -9,7 +9,7 @@ use yii\db\ActiveRecord;
  * Class Programador
  * @package app\models
  * @property int $id
- * @property sting nome
+ * @property string nome
  * @property string $github
  * @property ProgramadorLinguagem[] $programadorLinguagens
  * @property Linguagem[] $linguagens

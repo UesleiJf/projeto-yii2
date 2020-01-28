@@ -20,7 +20,7 @@ class Linguagem extends ActiveRecord
 
     public static function()
     {
-        return 'linguagens';
+        return 'Linguagens';
     }
 
     public function rules()

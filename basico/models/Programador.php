@@ -19,7 +19,7 @@ class Programador extends ActiveRecord
 
     public static function tableName()
     {
-        return 'programadores';
+        return 'Programadores';
     }
 
     public function rules()

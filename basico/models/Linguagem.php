@@ -18,7 +18,7 @@ use yii\db\ActiveRecord;
 class Linguagem extends ActiveRecord
 {
 
-    public static function()
+    public static function tableName()
     {
         return 'Linguagens';
     }

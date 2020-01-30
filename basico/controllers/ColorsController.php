@@ -1,13 +1,6 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: hunk
- * Date: 13/01/20
- * Time: 14:32
- */
 
 namespace app\controllers;
-
 
 use app\models\Sizes;
 use yii\base\Controller;

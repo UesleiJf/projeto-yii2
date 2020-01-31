@@ -14,6 +14,9 @@ In this project, concepts and applications such as:
 - Widgets
 - Migrations
 - Validators.
+- Relations DB many to many
+- Relations DB one to many
+- Relations DB one to one
 
 At the end of the project, a Docker container will be created for API availability.
 

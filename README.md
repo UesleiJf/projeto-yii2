@@ -19,6 +19,7 @@ In this project, concepts and applications such as:
 - Relations DB one to one
 
 At the end of the project, a Docker container will be created for API availability.
+(For more about Docker see: https://docs.docker.com/)
 
 It is not defined for which purpose or segment this project can be used in the future.
 
